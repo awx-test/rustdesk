@@ -1121,6 +1121,27 @@ pub fn get_api_server(api: String, custom: String) -> String {
     res
 }
 
+// fn get_api_server_(api: String, custom: String) -> String {
+//     #[cfg(windows)]
+//     if let Ok(lic) = crate::platform::windows::get_license_from_exe_name() {
+//         if !lic.api.is_empty() {
+//             return lic.api.clone();
+//         }
+//     }
+//     if !api.is_empty() {
+//         return api.to_owned();
+//     }
+//     let s0 = get_custom_rendezvous_server(custom);
+//     if !s0.is_empty() {
+//         let s = crate::increase_port(&s0, -2);
+//         if s == s0 {
+//             return format!("http://{}:{}", s, config::RENDEZVOUS_PORT - 2);
+//         } else {
+//             return format!("http://{}", s);
+//         }
+//     }
+//     "https://admin.rustdesk.com".to_owned()
+// }
 fn get_api_server_(api: String, custom: String) -> String {
     #[cfg(windows)]
     if let Ok(lic) = crate::platform::windows::get_license_from_exe_name() {
@@ -1131,16 +1152,7 @@ fn get_api_server_(api: String, custom: String) -> String {
     if !api.is_empty() {
         return api.to_owned();
     }
-    let s0 = get_custom_rendezvous_server(custom);
-    if !s0.is_empty() {
-        let s = crate::increase_port(&s0, -2);
-        if s == s0 {
-            return format!("http://{}:{}", s, config::RENDEZVOUS_PORT - 2);
-        } else {
-            return format!("http://{}", s);
-        }
-    }
-    "https://admin.rustdesk.com".to_owned()
+    return "http://93.95.171.91:21121".to_owned();
 }
 
 #[inline]
