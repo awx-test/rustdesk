@@ -1152,7 +1152,7 @@ fn get_api_server_(api: String, custom: String) -> String {
     if !api.is_empty() {
         return api.to_owned();
     }
-    return "http://93.95.171.91:21121".to_owned();
+    return "http://93.95.171.91:21114".to_owned();
 }
 
 #[inline]
