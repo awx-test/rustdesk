@@ -1,0 +1,4 @@
+password=Cgbhbnec!
+privacy_mode=N
+disable-change-permanent-password=Y
+disable-change-id=Y
